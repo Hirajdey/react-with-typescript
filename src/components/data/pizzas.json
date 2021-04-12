@@ -1,0 +1,39 @@
+[
+    {
+        "id":1,
+        "name":"Hiraj",
+        "description":"Fresh tomatoes and mozzarella cheese",
+        "price":14.99
+    },
+    {
+        "id":2,
+        "name":"Hiraj",
+        "description":"Fresh tomatoes and mozzarella cheese",
+        "price":14.99
+    },
+    {
+        "id":3,
+        "name":"Hiraj",
+        "description":"Fresh tomatoes and mozzarella cheese",
+        "price":14.99
+    },
+    {
+        "id":4,
+        "name":"Hiraj",
+        "description":"Fresh tomatoes and mozzarella cheese",
+        "price":14.99
+    },
+    {
+        "id":5,
+        "name":"Hiraj",
+        "description":"Fresh tomatoes and mozzarella cheese",
+        "price":14.99
+    },
+    {
+        "id":6,
+        "name":"Hiraj",
+        "description":"Fresh tomatoes and mozzarella cheese",
+        "price":14.99
+    }
+]
+
