@@ -1,0 +1,343 @@
+@import "../../../../scss/variables";
+@import "../../../../scss/functions";
+
+.ourJourneySection {
+    padding: 60px 0 130px;
+    background-color: #0f53fb;
+    .heading {
+        margin-bottom: 60px;
+        h2 {
+            font-family: var(--font-semiBold);
+            font-size: calcRem(40);
+            line-height: calcRem(70);
+            text-align: center;
+            color: #fff;
+        }
+    }
+
+    .ourJourneyBox {
+        padding: 60px 0 0;
+        border-bottom: solid 2px rgba(255, 255, 255, 0.7);
+        height: 370px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 75px;
+        .journeyCol {
+            width: 16%;
+            // border:solid 1px #fff;
+            position: relative;
+            .description {
+                max-width: 143px;
+                margin: auto;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                overflow: hidden;
+                padding-bottom: 25px;
+                background-color: #0f53fb;
+                span {
+                    color: #fff;
+                    font-size: calcRem(14);
+                    text-align: center;
+                    display: none;
+                }
+                h4 {
+                    color: #fff;
+                    font-size: calcRem(14);
+                    text-align: center;
+                    line-height: calcRem(22);
+                }
+            }
+
+            &:nth-child(1) {
+                .description {
+                    max-width: 180px;
+                }
+            }
+            &:nth-child(2) {
+                .description {
+                    max-width: 155px;
+                }
+            }
+            &:nth-child(4) {
+                .description {
+                    max-width: 160px;
+                }
+            }
+
+            .journyYears {
+                width: 90px;
+                margin: auto;
+                padding: 6px 10px;
+                position: absolute;
+                bottom: -70px;
+                left: 0;
+                right: 0;
+                border-radius: 25px;
+                cursor: pointer;
+                span {
+                    font-size: calcRem(16);
+                    color: #fff;
+                    opacity: 0.7;
+                    font-family: var(--font-semiBold);
+                    display: block;
+                    text-align: center;
+                }
+                &:hover {
+                    background-color: #fff;
+                    animation-name: blurYear;
+                    animation-duration: 2s;
+                    animation-timing-function: ease-in-out;
+                    span {
+                        color: #0f53fb;
+                        opacity: 1;
+                    }
+                }
+            }
+
+            .dottButtom {
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                position: absolute;
+                bottom: -11px;
+                left: 0;
+                right: 0;
+                margin: auto;
+                span {
+                    background-color: #fff;
+                    width: 12px;
+                    height: 12px;
+                    border-radius: 50%;
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    top: 0;
+                    margin: auto;
+                }
+            }
+            .activeStik {
+                width: 1px;
+                height: 0;
+                position: absolute;
+                background-color: rgba(255, 255, 255, 1);
+                bottom: 8px;
+                left: 0;
+                right: 0;
+                margin: auto;
+                transition: height 1400ms;
+                -webkit-transition: height 1400ms;
+                -moz-transition: height 1400ms;
+                -o-transition: height 1400ms;
+            }
+            .activeDott {
+                &::after {
+                    content: "";
+                    width: 30px;
+                    height: 60px;
+                    bottom: -50px;
+                    background-color: red;
+                }
+            }
+        }
+
+        .journeyCol.active {
+            .description {
+                max-width: 600px;
+                width: 600px;
+                margin: auto;
+                position: absolute;
+                bottom: 80%;
+                left: 80%;
+                right: 0;
+                transition: bottom 2s;
+                animation-name: blurDescription;
+                animation-duration: 3s;
+                animation-timing-function: ease-in-out;
+                span {
+                    color: #fff;
+                    font-size: calcRem(14);
+                    text-align: left;
+                    display: block;
+                    margin-bottom: 10px;
+                    text-transform: uppercase;
+                }
+                h4 {
+                    color: #fff;
+                    font-size: calcRem(26);
+                    text-align: left;
+                    line-height: calcRem(32);
+                }
+            }
+
+            @keyframes blurDescription {
+                0% {
+                    opacity: 0;
+                    bottom: 60%;
+                }
+                50% {
+                    opacity: 0.5;
+                    bottom: 90%;
+                }
+                100% {
+                    opacity: 1;
+                    bottom: 80%;
+                }
+            }
+
+            @keyframes blurYear {
+                0% {
+                    opacity: 0;
+                }
+                50% {
+                    opacity: 0.5;
+                }
+                100% {
+                    opacity: 1;
+                }
+            }
+            .journyYears {
+                width: 90px;
+                background-color: #fff;
+                margin: auto;
+                padding: 6px 10px;
+                border-radius: 25px;
+                animation-name: blurYear;
+                animation-duration: 3s;
+                animation-timing-function: ease-in-out;
+                span {
+                    color: #0f53fb;
+                    opacity: 1;
+                }
+            }
+            .dottButtom {
+                border: solid 1px #fff;
+                span {
+                    transition: bottom 1000ms;
+                    animation-name: bottomDotMove;
+                    animation-duration: 1000ms;
+                    animation-timing-function: ease-in-out;
+                }
+            }
+            @keyframes bottomDotMove {
+                0% {
+                    opacity: 0.7;
+                    left: -200px;
+                    height: 2px;
+                    width: 100px;
+                    border-radius: 10px;
+                    transition: width 500ms, left 1000ms;
+                }
+                100% {
+                    opacity: 1;
+                    left: 0;
+                }
+            }
+            .activeStik {
+                height: 97%;
+                transition: height 1400ms;
+                -webkit-transition: height 1400ms;
+                -moz-transition: height 1400ms;
+                -o-transition: height 1400ms;
+            }
+            .activeDott {
+                width: 20px;
+                height: 20px;
+                border: solid 1px #fff;
+                border-radius: 50%;
+                position: absolute;
+                bottom: 100%;
+                left: 0;
+                right: 0;
+                margin: auto;
+                animation-name: dotBlink;
+                animation-duration: 3s;
+                animation-timing-function: ease-in-out;
+                span {
+                    background-color: #fff;
+                    width: 12px;
+                    height: 12px;
+                    border-radius: 50%;
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    top: 0;
+                    margin: auto;
+                    transition: bottom 2000ms;
+                    animation-name: dotMove;
+                    animation-duration: 2000ms;
+                    animation-timing-function: ease-in-out;
+                }
+                &::after {
+                    content: "";
+                    width: 30px;
+                    height: 60px;
+                    background-color: #0f53fb;
+                    position: absolute;
+                    bottom: 30px;
+                    right: -2px;
+                    left: -5px;
+                    z-index: 10;
+                    transition: bottom 3000ms;
+                    -webkit-transition: bottom 3000ms;
+                    -moz-transition: bottom 3000ms;
+                    -o-transition: bottom 3000ms;
+                }
+            }
+            @keyframes dotBlink {
+                0% {
+                    opacity: 0;
+                }
+                100% {
+                    opacity: 1;
+                }
+            }
+
+            @keyframes dotMove {
+                0% {
+                    opacity: 0.7;
+                    bottom: -500px;
+                    width: 4px;
+                    height: 180px;
+                    border-radius: 10px;
+                    transition: width 500ms, height 500ms, bottom 1000ms;
+                }
+                100% {
+                    opacity: 1;
+                    bottom: 0;
+                }
+            }
+        }
+        .journeyCol.active {
+            &:nth-last-child(1),
+            &:nth-last-child(2),
+            &:nth-last-child(3) {
+                .description {
+                    max-width: 600px;
+                    width: 600px;
+                    margin: auto;
+                    position: absolute;
+                    bottom: 80%;
+                    left: auto;
+                    right: 80%;
+                    span {
+                        color: #fff;
+                        font-size: calcRem(14);
+                        text-align: right;
+                        display: block;
+                    }
+                    h4 {
+                        color: #fff;
+                        font-size: calcRem(26);
+                        text-align: right;
+                        line-height: calcRem(32);
+                    }
+                }
+            }
+        }
+    }
+}
